@@ -29,7 +29,6 @@ const state = {
   config: { step: 1 / 60 },
   subscriptions: {},
   bodiesNeedSyncing: false,
-  lastCallTime: undefined,
 }
 
 function syncBodies() {
@@ -85,14 +84,7 @@ self.onmessage = (e) => {
       break
     }
     case 'step': {
-      const now = performance.now() / 1000
-      if (!state.lastCallTime) {
-        state.world.step(state.config.step)
-      } else {
-        const timeSinceLastCall = now - state.lastCallTime
-        state.world.step(state.config.step, timeSinceLastCall)
-      }
-      state.lastCallTime = now
+      world.step(state.config.step)
 
       const numberOfBodies = state.world.bodies.length
       for (let i = 0; i < numberOfBodies; i++) {
