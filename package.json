@@ -22,8 +22,7 @@
     "prettier": "prettier --list-different .",
     "prettier-fix": "prettier --write .",
     "test": "echo tests are missing",
-    "prepare": "husky install",
-    "postinstall": "npm run build"
+    "prepare": "husky install"
   },
   "peerDependencies": {
     "react": ">=17.0",
