@@ -84,7 +84,7 @@ self.onmessage = (e) => {
       break
     }
     case 'step': {
-      world.step(state.config.step)
+      state.world.step(state.config.step)
 
       const numberOfBodies = state.world.bodies.length
       for (let i = 0; i < numberOfBodies; i++) {

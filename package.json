@@ -1,20 +1,15 @@
 {
-  "name": "@react-three/cannon",
-  "version": "4.0.1",
-  "description": "physics based hooks for react-three-fiber",
-  "keywords": [
-    "cannon",
-    "three",
-    "react",
-    "react-three-fiber",
-    "physics"
-  ],
+  "name": "@kajumito/cannon",
+  "version": "4.0.1+fix",
   "author": "Paul Henschel",
   "contributors": [
     "Cody Persinger <codypersinger@gmail.com> (https://github.com/codynova)",
     "Bjorn Stromberg <bjorn@bjornstar.com> (https://github.com/bjornstar)"
   ],
-  "repository": "github:pmndrs/use-cannon",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kajumito/use-cannon.git"
+  },
   "license": "MIT",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,7 +22,8 @@
     "prettier": "prettier --list-different .",
     "prettier-fix": "prettier --write .",
     "test": "echo tests are missing",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "npm run build"
   },
   "peerDependencies": {
     "react": ">=17.0",
@@ -66,5 +62,6 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "*.{js,jsx,ts,tsx,md}": "prettier --write"
-  }
+  },
+  "main": "rollup.config.js"
 }
